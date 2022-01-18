@@ -13,10 +13,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', usersRouter);
-app.use(function (req, res, next) {
-  res.status(404).json({message: "We couldn't find what you were looking for :disappointed:"})
-})
-app.use(function (err, req, res, next) {
+// app.use(function (req, res) {
+//   res.status(404).json({message: "We couldn't find what you were looking for :disappointed:"})
+// })
+app.use(function (err, req, res) {
   console.error(err.stack)
   res.status(500).json(err)
 })
