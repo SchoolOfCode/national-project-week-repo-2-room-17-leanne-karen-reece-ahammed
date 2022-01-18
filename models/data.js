@@ -2,6 +2,7 @@ import query from "../db/index.js";
 
 export async function getAllUserData() {
   const data = await query(`SELECT * FROM soc`);
+  console.log(data)
   return data.rows;
 }
 
