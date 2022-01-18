@@ -21,7 +21,7 @@ router.post("/users", async function (req, res){
 
   res.json({
     success: true,
-    message:`Post has been successfully ${body}`,
+    message:`Post has been successfully ${body.name}`,
     payload: create
   })
 })
@@ -32,7 +32,7 @@ router.post("/url", async function (req, res){
 
   res.json({
     sucess: true,
-    message: `Post has been successfully ${create}`,
+    message: `Post has been successfully url`,
     payload: create
   })
 
