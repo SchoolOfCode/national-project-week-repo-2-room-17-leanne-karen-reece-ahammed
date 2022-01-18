@@ -1,1 +1,1 @@
-web: nodemon www.js
+web: nodemon -r dotenv/config  ./bin/www.js
