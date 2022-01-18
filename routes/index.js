@@ -9,7 +9,7 @@ router.get('/users', async function(req, res, next) {
   res.json({success : true, payload : data})
 });
 
-router.get('/url', async function(req, res, next) {
+router.get('/users/url', async function(req, res, next) {
   const data =  await getAllURL();
   res.json({success : true, payload : data})
 });
