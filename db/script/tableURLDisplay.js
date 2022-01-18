@@ -10,4 +10,4 @@ async function populateURL(){
     }
 }
 
-//populateURL();
+populateURL();

@@ -13,4 +13,4 @@ async function createTable(){
     console.log("Table created!", res)
     }
 
-//createTable();
+createTable();

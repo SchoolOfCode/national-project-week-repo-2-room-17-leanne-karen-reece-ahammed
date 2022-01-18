@@ -13,4 +13,4 @@ async function urlTable(){
     console.log("Table created!", res)
     }
 
-    //urlTable();
+    urlTable();
