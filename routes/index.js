@@ -4,17 +4,17 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/users', async function(req, res, next) {
+router.get('/', async function(req, res, next) {
   const data =  await getAllUserData();
   res.json({success : true, payload : data})
 });
 
-router.get('/users/url', async function(req, res, next) {
+router.get('/url', async function(req, res, next) {
   const data =  await getAllURL();
   res.json({success : true, payload : data})
 });
 
-router.post("/users", async function (req, res){
+router.post("/", async function (req, res){
   const body = req.body;
   const create = await createData(body);
   console.log(body);
