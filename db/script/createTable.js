@@ -1,7 +1,5 @@
 import query from "../index.js"
 
-const date = new Date();
-
 
 const SQLString = `CREATE TABLE IF NOT EXISTS soc (
     id SERIAL PRIMARY KEY,

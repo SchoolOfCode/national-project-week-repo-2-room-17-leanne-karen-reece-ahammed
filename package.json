@@ -7,7 +7,9 @@
     "start": "node ./bin/www.",
     "dev"  : "nodemon -r dotenv/config  ./bin/www.js",
     "dbcreatetable" : "node -r dotenv/config ./db/script/createTable.js",
-    "dbpopulatetable" : "node -r dotenv/config ./db/script/populateTable.js"
+    "dbpopulatetable" : "node -r dotenv/config ./db/script/populateTable.js",
+    "dbtable2" : "node -r dotenv/config ./db/script/tableURL.js",
+    "dbtabledisplay" : "node -r dotenv/config ./db/script/tableURLDisplay.js"
 
   },
   "dependencies": {
