@@ -48,3 +48,14 @@ export async function updatePost(body) {
   return data.rows;
 }
   
+export async function deletedSoCById(id) {
+  const data = await query(`DELETE FROM soc WHERE id = $1;`, [id]);
+
+  return data.rows;
+}
+
+export async function deletedPostById(id) {
+  const data = await query(`DELETE FROM post WHERE id = $1;`, [id]);
+
+  return data.rows;
+}
