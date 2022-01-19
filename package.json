@@ -2,18 +2,18 @@
   "name": "national-project-week-repo-2-room-17-leanne-karen-reece-ahammed",
   "version": "0.0.0",
   "private": true,
-  "type" :"module",
+  "type": "module",
   "scripts": {
     "start": "node ./bin/www.js",
-    "dev"  : "nodemon -r dotenv/config  ./bin/www.js",
-    "dbcreatetable" : "node -r dotenv/config ./db/script/createTable.js",
-    "dbpopulatetable" : "node -r dotenv/config ./db/script/populateTable.js",
-    "dbtable2" : "node -r dotenv/config ./db/script/tableURL.js",
-    "dbtabledisplay" : "node -r dotenv/config ./db/script/tableURLDisplay.js"
-
+    "dev": "nodemon -r dotenv/config  ./bin/www.js",
+    "dbcreatetable": "node -r dotenv/config ./db/script/createTable.js",
+    "dbpopulatetable": "node -r dotenv/config ./db/script/populateTable.js",
+    "dbtable2": "node -r dotenv/config ./db/script/tableURL.js",
+    "dbtabledisplay": "node -r dotenv/config ./db/script/tableURLDisplay.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
