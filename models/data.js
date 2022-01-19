@@ -24,7 +24,7 @@ export async function createData(body) {
 export async function createURL(body) {
   const url = body.url;
   const data = await query(
-    `INSERT INTO post (url) VALUES ($1} RETURNING url)`,
+    `INSERT INTO post (url) VALUES ($1) RETURNING url)`,
     [url]
   );
   return data.rows;
