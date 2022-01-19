@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllUserData, getAllURL, createData, createURL } from '../models/data.js';
+import { getAllUserData, getAllURL, createData, createURL, updateSOC } from '../models/data.js';
 var router = express.Router();
 
 
@@ -36,6 +36,17 @@ router.post("/url", async function (req, res){
     payload: create
   })
 
+})
+
+router.put("/:id", async function (req, res){
+  const body = req.body;
+  const update = await updateSOC(body);
+
+  res.json({
+    sucess: true,
+    message: `Update has been successful`,
+    payload: update
+  })
 })
 
 
