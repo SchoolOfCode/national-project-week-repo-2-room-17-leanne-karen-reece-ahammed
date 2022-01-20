@@ -1,12 +1,10 @@
 import express from "express";
 import {
   getAllUserData,
-  getAllURL,
   createData,
-  createURL,
   updateSOC,
   deletedSoCById,
-  deletedPostById,
+ 
 } from "../models/data.js";
 var router = express.Router();
 
@@ -16,10 +14,10 @@ router.get("/", async function (req, res) {
   res.json({ success: true, payload: data });
 });
 
-router.get("/url", async function (req, res) {
-  const data = await getAllURL();
-  res.json({ success: true, payload: data });
-});
+// router.get("/url", async function (req, res) {
+//   const data = await getAllURL();
+//   res.json({ success: true, payload: data });
+// });
 
 router.post("/", async function (req, res) {
   const body = req.body;
@@ -33,16 +31,16 @@ router.post("/", async function (req, res) {
   });
 });
 
-router.post("/url", async function (req, res) {
-  const body = req.body;
-  const create = await createURL(body);
+// router.post("/url", async function (req, res) {
+//   const body = req.body;
+//   const create = await createURL(body);
 
-  res.json({
-    sucess: true,
-    message: `Post has been successfully url`,
-    payload: create,
-  });
-});
+//   res.json({
+//     sucess: true,
+//     message: `Post has been successfully url`,
+//     payload: create,
+//   });
+// });
 
 router.put("/:id", async function (req, res) {
   const body = req.body;
@@ -66,14 +64,14 @@ router.delete("/:id", async function (req, res) {
   });
 });
 
-router.delete("/:id", async function (req, res) {
-  const id = Number(req.params.id)
-  const body = await deletedPostById(id);
-  res.json({
-    sucess: true,
-    message: `Update has been successful${body.id}`,
-    payload: id,
-  });
-});
+// router.delete("/:id", async function (req, res) {
+//   const id = Number(req.params.id)
+//   const body = await deletedPostById(id);
+//   res.json({
+//     sucess: true,
+//     message: `Update has been successful${body.id}`,
+//     payload: id,
+//   });
+// });
 
 export default router;

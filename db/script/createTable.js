@@ -3,8 +3,11 @@ import query from "../index.js"
 
 const SQLString = `CREATE TABLE IF NOT EXISTS soc (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    comments VARCHAR(255),
+    name TEXT,
+    feeling INTEGER,
+    reflection TEXT,
+    workshop INTEGER,
+    url TEXT,
     created timestamp not null default CURRENT_TIMESTAMP
     )`
 
