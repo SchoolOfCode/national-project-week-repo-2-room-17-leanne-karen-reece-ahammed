@@ -4,12 +4,42 @@ import {
   createData,
   updateSOC,
   deletedSoCById,
+  getQuaryByDate,
+  getQuaryByName,
+  getQuaryById,
  
 } from "../models/data.js";
 var router = express.Router();
 
 /* GET home page. */
 router.get("/", async function (req, res) {
+  const id = req.query.id;
+  const names = req.query.names;
+  const created = req.query.created
+if(id){
+  const searchId = await getQuaryById(id)
+  res.json({
+    success: true,
+    payload: searchId
+  });
+  return;
+}
+if(names){
+  const searchName = await getQuaryByName(names)
+  res.json({
+    success: true,
+    payload: searchName
+  });
+  return;
+}
+if(created){
+  const searchDate = await getQuaryByDate(created)
+  res.json({
+    success: true,
+    payload: searchDate
+  });
+  return;
+}
   const data = await getAllUserData();
   res.json({ success: true, payload: data });
 });

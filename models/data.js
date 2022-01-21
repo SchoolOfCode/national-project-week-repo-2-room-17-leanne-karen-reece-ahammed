@@ -32,6 +32,34 @@ export async function updateSOC(body) {
     return data.rows;
   }
 
+  export async function getQuaryById(id) {
+    const data = await query(
+      `SELECT * FROM soc WHERE id = $1;`,
+      [id]
+    );
+  
+    return data.rows;
+  }
+
+  export async function getQuaryByName(names) {
+    const data = await query(
+      `SELECT * FROM soc WHERE name ILIKE '%' || $1 || '%';`,
+      [names]
+    );
+  
+    return data.rows;
+  }
+
+  export async function getQuaryByDate(created) {
+    const data = await query(
+      `SELECT * FROM soc WHERE created ILIKE '%' || $1 || '%';`,
+      [created]
+    );
+  
+    return data.rows;
+  }
+
+
 
 // export async function getAllURL() {
 //   const data = await query(`SELECT * FROM post`);
