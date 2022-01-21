@@ -14,7 +14,7 @@ export async function createData(body) {
   const url = body. url
   const data = await query(`INSERT INTO soc (name,
     feeling, reflection, workshop, url ) VALUES ($1 , $2, $3, $4, $5) 
-    RETURNING name`, [name,feeling, reflection, workShop, url]);
+    RETURNING reflection`, [name,feeling, reflection, workShop, url]);
   return data.rows;
 }
 
@@ -22,7 +22,7 @@ export async function updateSOC(body) {
   const name = body.name;
   const reflection = body.reflection;
   const id = body.id;
-  const data = await query(`UPDATE soc SET name = $1, reflection = $2 WHERE id = $3 RETURNING name;`,
+  const data = await query(`UPDATE soc SET name = $1, reflection = $2 WHERE id = $3 RETURNING reflection;`,
   [name, reflection, id]);
   return data.rows;
   }

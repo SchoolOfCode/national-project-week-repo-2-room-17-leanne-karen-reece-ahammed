@@ -52,11 +52,11 @@ if(created){
 router.post("/", async function (req, res) {
   const body = req.body;
   const create = await createData(body);
-  console.log(body);
+ 
 
   res.json({
     success: true,
-    message: `Post has been successfully ${body.name}`,
+    message: `Post has been successfully, ${body.reflection}`,
     payload: create,
   });
 });
@@ -75,10 +75,10 @@ router.post("/", async function (req, res) {
 router.put("/:id", async function (req, res) {
   const body = req.body;
   const update = await updateSOC(body);
-
+  console.log(update);
   res.json({
     sucess: true,
-    message: `Update has been successful${update.name}`,
+    message: `Update has been successful, ${body.reflection}`,
     payload: body,
   });
 });
@@ -87,10 +87,11 @@ router.put("/:id", async function (req, res) {
 router.delete("/:id", async function (req, res) {
   const id = Number(req.params.id)
   const body = await deletedSoCById(id);
+  console.log(body);
   res.json({
     sucess: true,
-    message: `Update has been successful`,
-    payload: body,
+    message: `${id} has been successful deleted`,
+    payload: id,
   });
 });
 
@@ -105,3 +106,5 @@ router.delete("/:id", async function (req, res) {
 // });
 
 export default router;
+
+
